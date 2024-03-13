@@ -1,6 +1,9 @@
 <?php
 
+use App\Helpers\Routes\RouteHelper;
 use Illuminate\Http\Request;
+use RecursiveIteratorIterator;
+use RecursiveDirectoryIterator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')
     ->group(function () {
-        require __DIR__ . '/api/v1/users.php';
-        require __DIR__ . '/api/v1/posts.php';
-        require __DIR__ . '/api/v1/comments.php';
+        $directory = __DIR__ . '/api/v1';
+        // Check if the directory exists
+        RouteHelper::includeRouteFiles($directory);
     });
+    // require __DIR__ . '/api/v1/users.php';
+    // require __DIR__ . '/api/v1/posts.php';
+    // require __DIR__ . '/api/v1/comments.php';
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
