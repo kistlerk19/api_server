@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
-class PostController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return new JsonResponse([
+            'data' => "ascqdcw"
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store()
     {
         //
     }
@@ -28,7 +30,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(User $user)
     {
         //
     }
@@ -36,7 +38,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(User $user)
     {
         //
     }
@@ -44,7 +46,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(User $User)
     {
         //
     }
