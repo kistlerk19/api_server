@@ -22,5 +22,4 @@ Route::middleware([
         Route::delete('/posts/{post}', [\App\Http\Controllers\PostController::class, 'destroy'])->name('destroy');
 
         Route::post('/posts/{post}/share', [\App\Http\Controllers\PostController::class, 'share'])->name('share');
-
     });
